@@ -1,4 +1,4 @@
-# JioHotstar for Kodi (unofficial)
+# JioHotstar for Kodi (unofficial) Still under development
 
 ```
 plugin.video.jiohotstar/   the video add-on
