@@ -13,6 +13,9 @@ DRM_SCHEME = "com.widevine.alpha"
 MIME = {"dash": "application/dash+xml", "hls": "application/vnd.apple.mpegurl"}
 ISA_PROTOCOL = {"dash": "mpd", "hls": "hls"}
 
+# Android Mobile User-Agent Spoofing Header
+MOBILE_USER_AGENT = "Hotstar;com.myplaylist.asiatv/24.03.04 (Android/12; SM-G998B)"
+
 
 def _fail(handle, message):
     utils.notify(message, error=True)
@@ -35,7 +38,12 @@ def _isa_ready(protocol, has_drm):
 
 def _build_license_key(api, license_url):
     cfg = api.cfg
-    headers = urlencode(api.build_headers("license_headers"))
+    headers_dict = api.build_headers("license_headers")
+    
+    # Force Mobile User-Agent in DRM license request headers
+    headers_dict["User-Agent"] = MOBILE_USER_AGENT
+    
+    headers = urlencode(headers_dict)
     return "%s|%s|%s|%s" % (
         license_url, headers,
         cfg.get("license_request_format", "R{SSM}"),
@@ -44,14 +52,18 @@ def _build_license_key(api, license_url):
 
 
 def _build_listitem(api, info, item_id):
-    protocol = info["protocol"]
+    protocol = info.get("protocol", "dash")
     li = xbmcgui.ListItem(path=info["url"])
     li.setContentLookup(False)
-    li.setMimeType(MIME[protocol])
+    li.setMimeType(MIME.get(protocol, MIME["dash"]))
     li.setProperty("inputstream", "inputstream.adaptive")
-    li.setProperty("inputstream.adaptive.manifest_type", ISA_PROTOCOL[protocol])
+    li.setProperty("inputstream.adaptive.manifest_type", ISA_PROTOCOL.get(protocol, "mpd"))
 
-    stream_headers = urlencode(api.build_headers("stream_headers"))
+    # Force Mobile User-Agent on Manifest and Segment HTTP Stream Requests
+    stream_headers_dict = api.build_headers("stream_headers")
+    stream_headers_dict["User-Agent"] = MOBILE_USER_AGENT
+    stream_headers = urlencode(stream_headers_dict)
+
     if stream_headers:
         li.setProperty("inputstream.adaptive.manifest_headers", stream_headers)
         li.setProperty("inputstream.adaptive.stream_headers", stream_headers)
@@ -62,7 +74,6 @@ def _build_listitem(api, info, item_id):
 
     max_res = utils.get_int("max_resolution", 1080)
     if max_res:
-        # Honoured by ISA 20+ (Nexus/Omega); ignored on older versions.
         li.setProperty("inputstream.adaptive.chooser_resolution_max", "%dp" % max_res)
         li.setProperty("inputstream.adaptive.chooser_resolution_secure_max", "%dp" % max_res)
 
@@ -102,7 +113,7 @@ def _apply_language_preferences(timeout=25):
                     player.setSubtitleStream(index)
                     player.showSubtitles(True)
                     break
-    except Exception as exc:  # preferences are best-effort
+    except Exception as exc:
         utils.log("language preference failed: %s" % exc, xbmc.LOGWARNING)
 
 
@@ -124,7 +135,7 @@ def play(api, handle, item_id, item_type):
         _fail(handle, "%s: %s" % (utils.tr(30518), exc))
         return
 
-    if not _isa_ready(info["protocol"], bool(info.get("license_url"))):
+    if not _isa_ready(info.get("protocol", "dash"), bool(info.get("license_url"))):
         _fail(handle, utils.tr(30519))
         return
 
