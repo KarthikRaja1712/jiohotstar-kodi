@@ -1,0 +1,3 @@
+# Editor autocomplete / linting only. NOT needed inside Kodi.
+Kodistubs
+requests

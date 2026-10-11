@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": ["./plugin.video.jiohotstar"],
+    "python.autoComplete.extraPaths": ["./plugin.video.jiohotstar"],
+    "files.exclude": { "**/__pycache__": true, "**/*.pyc": true },
+    "[xml]": { "editor.tabSize": 4 },
+    "[python]": { "editor.tabSize": 4 }
+}

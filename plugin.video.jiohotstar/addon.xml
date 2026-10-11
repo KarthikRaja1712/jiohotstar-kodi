@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.jiohotstar"
+       name="JioHotstar"
+       version="1.0.0"
+       provider-name="JioHotstarPlugin">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.27.1"/>
+        <import addon="script.module.inputstreamhelper" version="0.6.1"/>
+        <import addon="inputstream.adaptive" version="19.0.0" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">JioHotstar for Kodi</summary>
+        <description lang="en_GB">Watch content from your own JioHotstar subscription in Kodi. Requires a valid account, and Widevine CDM support for protected streams (installed via InputStream Helper). Not affiliated with or endorsed by JioStar.</description>
+        <disclaimer lang="en_GB">This is an unofficial add-on. You need an active JioHotstar account. Use may conflict with the service's Terms of Use; you are responsible for your own account.</disclaimer>
+        <platform>all</platform>
+        <license>GPL-3.0-or-later</license>
+        <language>en hi ta te ml kn bn mr</language>
+        <source>https://github.com/KarthikRaja1712/jiohotstar-kodi</source>
+        <news>v1.0.0 - Initial release</news>
+        <assets>
+            <icon>jiohotstartIcon.webp</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>

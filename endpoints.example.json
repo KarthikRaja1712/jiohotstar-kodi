@@ -1,0 +1,15 @@
+{
+  "image_base": "",
+  "endpoints": {
+    "otp_request": {"method": "POST", "url": "https://EXAMPLE/auth/otp/send",
+                    "json": {"mobile": "{mobile}", "countryCode": "{country_code}"}},
+    "otp_verify":  {"method": "POST", "url": "https://EXAMPLE/auth/otp/verify",
+                    "json": {"otp": "{otp}", "requestId": "{request_id}"}},
+    "page":        {"method": "GET", "url": "https://EXAMPLE/pages/{slug}",
+                    "params": {"page": "{page}", "limit": "{limit}"}},
+    "children":    {"method": "GET", "url": "https://EXAMPLE/content/{id}/children"},
+    "search":      {"method": "GET", "url": "https://EXAMPLE/search", "params": {"q": "{query}"}},
+    "playback":    {"method": "GET", "url": "https://EXAMPLE/content/{id}/playback"}
+  },
+  "categories": {"live": "live-slug", "movies": "movies-slug", "shows": "shows-slug", "sports": "sports-slug"}
+}

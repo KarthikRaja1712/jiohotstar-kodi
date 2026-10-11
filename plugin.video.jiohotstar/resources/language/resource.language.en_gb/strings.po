@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plugin.video.jiohotstar\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#30100"
+msgid "Account"
+msgstr ""
+
+msgctxt "#30101"
+msgid "Login"
+msgstr ""
+
+msgctxt "#30110"
+msgid "Country code"
+msgstr ""
+
+msgctxt "#30111"
+msgid "Mobile number"
+msgstr ""
+
+msgctxt "#30112"
+msgid "Log in with OTP"
+msgstr ""
+
+msgctxt "#30113"
+msgid "Log out"
+msgstr ""
+
+msgctxt "#30200"
+msgid "Playback"
+msgstr ""
+
+msgctxt "#30201"
+msgid "Streaming"
+msgstr ""
+
+msgctxt "#30202"
+msgid "DRM"
+msgstr ""
+
+msgctxt "#30210"
+msgid "Preferred stream protocol"
+msgstr ""
+
+msgctxt "#30211"
+msgid "MPEG-DASH (Widevine)"
+msgstr ""
+
+msgctxt "#30212"
+msgid "HLS"
+msgstr ""
+
+msgctxt "#30213"
+msgid "Maximum resolution"
+msgstr ""
+
+msgctxt "#30214"
+msgid "Auto"
+msgstr ""
+
+msgctxt "#30215"
+msgid "2160p (4K)"
+msgstr ""
+
+msgctxt "#30216"
+msgid "1080p"
+msgstr ""
+
+msgctxt "#30217"
+msgid "720p"
+msgstr ""
+
+msgctxt "#30218"
+msgid "480p"
+msgstr ""
+
+msgctxt "#30219"
+msgid "Prefer HEVC streams"
+msgstr ""
+
+msgctxt "#30220"
+msgid "Preferred audio language (ISO 639-2, e.g. hin, eng, tam)"
+msgstr ""
+
+msgctxt "#30221"
+msgid "Preferred subtitle language (ISO 639-2)"
+msgstr ""
+
+msgctxt "#30222"
+msgid "Verify Widevine/InputStream setup before playback"
+msgstr ""
+
+msgctxt "#30223"
+msgid "Open InputStream Adaptive settings"
+msgstr ""
+
+msgctxt "#30300"
+msgid "Content"
+msgstr ""
+
+msgctxt "#30301"
+msgid "Listings"
+msgstr ""
+
+msgctxt "#30310"
+msgid "Items per page"
+msgstr ""
+
+msgctxt "#30311"
+msgid "Content languages (comma-separated codes)"
+msgstr ""
+
+msgctxt "#30312"
+msgid "Cache duration (minutes, 0 = off)"
+msgstr ""
+
+msgctxt "#30313"
+msgid "Clear cache"
+msgstr ""
+
+msgctxt "#30400"
+msgid "Advanced"
+msgstr ""
+
+msgctxt "#30401"
+msgid "Diagnostics"
+msgstr ""
+
+msgctxt "#30410"
+msgid "Enable debug logging"
+msgstr ""
+
+msgctxt "#30411"
+msgid "Request timeout (seconds)"
+msgstr ""
+
+msgctxt "#30412"
+msgid "Reset device ID and sign out"
+msgstr ""
+
+msgctxt "#30500"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#30501"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#30502"
+msgid "Shows"
+msgstr ""
+
+msgctxt "#30503"
+msgid "Sports"
+msgstr ""
+
+msgctxt "#30504"
+msgid "Search"
+msgstr ""
+
+msgctxt "#30505"
+msgid "Next page"
+msgstr ""
+
+msgctxt "#30506"
+msgid "Log in"
+msgstr ""
+
+msgctxt "#30507"
+msgid "You are not logged in. Log in now?"
+msgstr ""
+
+msgctxt "#30508"
+msgid "Enter the OTP you received"
+msgstr ""
+
+msgctxt "#30509"
+msgid "Enter your mobile number"
+msgstr ""
+
+msgctxt "#30510"
+msgid "Login successful"
+msgstr ""
+
+msgctxt "#30511"
+msgid "Login failed"
+msgstr ""
+
+msgctxt "#30512"
+msgid "Logged out"
+msgstr ""
+
+msgctxt "#30513"
+msgid "Cache cleared"
+msgstr ""
+
+msgctxt "#30514"
+msgid "Device ID reset and signed out"
+msgstr ""
+
+msgctxt "#30515"
+msgid "No results found"
+msgstr ""
+
+msgctxt "#30516"
+msgid "Search"
+msgstr ""
+
+msgctxt "#30517"
+msgid "API endpoints are not configured. Edit endpoints.json in the add-on data folder. See README."
+msgstr ""
+
+msgctxt "#30518"
+msgid "Playback failed"
+msgstr ""
+
+msgctxt "#30519"
+msgid "Widevine / InputStream Adaptive is not ready"
+msgstr ""
+
+msgctxt "#30520"
+msgid "Session expired. Please log in again."
+msgstr ""
+
+msgctxt "#30521"
+msgid "Error"
+msgstr ""
